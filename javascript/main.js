@@ -1,3 +1,6 @@
+//TODO
+//set textarea as focus upon load, so user can start typing right away
+
 var userInput = "";
 var userInputArr = [];
 
@@ -6,7 +9,7 @@ function LanguageDictionary(merry, christmas, and, happy, newnew, year) {
   this.christmas = christmas;
   this.and = and;
   this.happy = happy;
-  this.newnew = newnew;
+  this.new = newnew;
   this.year = year;
 }
 
@@ -58,7 +61,7 @@ function matchWords(inputArray, language) {
         console.log("match found, dict: ", langDictionary[keyLang]);
         matchedArrays.push(keyLang);
         console.log(keyLang);
-        document.getElementById("output-div").innerHTML += " - " + keyLang;
+        document.getElementById("output-div").innerHTML += " - " + langDictionary[keyLang];
       }
     } // for in
   }  //for in
