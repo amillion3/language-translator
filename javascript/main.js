@@ -34,28 +34,35 @@ function gatherUserInput() {
 function matchWords(inputArray, language) {
   //how to make language work dynamically select correct library???
   //i don't like this solution, but i should make it a function if i keep it
-  if (language == "esperanto") {
-    var langDictionary = esperanto;
-  } else if (language == "german") {
-    var langDictionary = german;
+  var langDictionary = "";
+  if (language === "esperanto") {
+    langDictionary = esperanto;
+  } else if (language === "german") {
+    langDictionary = german;
   } else {
-    var langDictionary = spanish;
-  }
+    langDictionary = spanish;
+  }  // this all works fine
   //boo
 
   var matchedArrays = [];
   //should use forEach() instead
   for (var key in inputArray) {  // for...in to loop through the user input array
+    console.log("1");
     for (var keyLang in langDictionary) {  // for...in to loop through the dictionary object
-      if (inputArray[key] === langDictionary[keyLang]) {
-        // console.log("match found, input: ", inputArray[key]);
-        // console.log("match found, dict: ", langDictionary[keyLang]);
+      console.log("2");
+      console.log("input: ", inputArray[key]);
+      console.log("dict: ", [keyLang]);
+      if (inputArray[key] === keyLang) {
+        console.log("3");
+        console.log("match found, input: ", inputArray[key]);
+        console.log("match found, dict: ", langDictionary[keyLang]);
         matchedArrays.push(keyLang);
-        // console.log(keyLang);
+        console.log(keyLang);
         document.getElementById("output-div").innerHTML += " - " + keyLang;
       }
-    } // for in   Object.keys(obj)
+    } // for in
   }  //for in
+  console.log(matchedArrays);
 }
 
 addButtonEvtListener();
