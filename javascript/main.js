@@ -59,13 +59,21 @@ function matchWords(inputArray, language) {
         console.log("3");
         console.log("match found, input: ", inputArray[key]);
         console.log("match found, dict: ", langDictionary[keyLang]);
-        matchedArrays.push(keyLang);
+        matchedArrays.push(langDictionary[keyLang]);
         console.log(keyLang);
-        document.getElementById("output-div").innerHTML += " - " + langDictionary[keyLang];
+        // document.getElementById("output-div").innerHTML += " - " + langDictionary[keyLang];
       }
     } // for in
   }  //for in
-  console.log(matchedArrays);
+  translateWords(matchedArrays);
+}
+
+function translateWords(translatedArray) {
+  var output = "";
+  translatedArray.forEach(function(element,index) {
+    output += element;
+  });
+  writeToDom(output,"output-div");
 }
 
 function writeToDom(domString, domId) {
