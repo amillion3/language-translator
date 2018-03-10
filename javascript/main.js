@@ -1,7 +1,3 @@
-//TODO
-//set textarea as focus upon load, so user can start typing right away
-//put IF statement in matchWords() into it's own function
-
 var userInput = "";
 var userInputArr = [];
 
@@ -47,7 +43,6 @@ function matchWords(inputArray, language) {
   var langDictionary = checkLanguage(language);  //check and assign language
 
   var matchedArrays = [];
-  //should use forEach() instead
   for (var key in inputArray) {  // for...in to loop through the user input array
     for (var keyLang in langDictionary) {  // for...in to loop through the dictionary object
       if (inputArray[key] === keyLang) {
