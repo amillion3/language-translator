@@ -68,4 +68,8 @@ function matchWords(inputArray, language) {
   console.log(matchedArrays);
 }
 
+function writeToDom(domString, domId) {
+  document.getElementById(domId).innerHTML = domString;
+}
+
 addButtonEvtListener();
