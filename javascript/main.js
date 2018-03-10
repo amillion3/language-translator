@@ -33,20 +33,22 @@ function gatherUserInput() {
   return inputArr;
 }
 
-function matchWords(inputArray, language) {
-  var langDictionary = "";
-  if (language === "esperanto") {
-    langDictionary = esperanto;
-  } else if (language === "german") {
-    langDictionary = german;
+function checkLanguage(languageCheck) {
+  if (languageCheck === "esperanto") {
+    return esperanto;
+  } else if (languageCheck === "german") {
+    return german;
   } else {
-    langDictionary = spanish;
+    return spanish;
   }
+}
+
+function matchWords(inputArray, language) {
+  var langDictionary = checkLanguage(language);  //check and assign language
 
   var matchedArrays = [];
   //should use forEach() instead
   for (var key in inputArray) {  // for...in to loop through the user input array
-    console.log("1");
     for (var keyLang in langDictionary) {  // for...in to loop through the dictionary object
       if (inputArray[key] === keyLang) {
         matchedArrays.push(langDictionary[keyLang]);
