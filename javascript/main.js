@@ -56,13 +56,13 @@ function matchWords(inputArray, language) {
 function translateWords(translatedArray) {
   var output = "";
   translatedArray.forEach(function(element,index) {
-    output += element;
+    output += element + " ";
   });
   writeToDom(output,"output-div");
 }
 
 function writeToDom(domString, domId) {
-  document.getElementById(domId).innerHTML = domString;
+  document.getElementById(domId).innerHTML =  domString;
 }
 
 addButtonEvtListener();
