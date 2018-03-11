@@ -31,6 +31,10 @@ textarea {
   font-size: 26px;
 }
 
+textarea:focus {
+  background-color: lightyellow;
+}
+
 button {
   width: 100%;
   display: block;
@@ -41,6 +45,7 @@ button {
 
 button:hover {
   background-color: lightsteelblue;
+  border: 1px solid #90a0b5;
 }
 
 #buttons {
