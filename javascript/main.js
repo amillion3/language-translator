@@ -13,6 +13,8 @@ function LanguageDictionary(merry, christmas, and, happy, newnew, year) {
 var esperanto = new LanguageDictionary("feliĉan","kristnaskon","kaj","feliĉa","nova","jaro");
 var german = new LanguageDictionary("fröhliche","weihnachten","und","glücklich","neu","jahr");
 var spanish = new LanguageDictionary("feliz","navidad","y","feliz","nuevo","año");
+var italian = new LanguageDictionary("allegro","natale","e","contento","nuovo","anno");
+var dutch = new LanguageDictionary("vrolijk","kerstmis","en","gelukkig","nieuwe","jaar");
 
 function addButtonEvtListener() {
   document.getElementById("buttons").addEventListener("click", function(e) {
@@ -42,6 +44,27 @@ function checkLanguage(languageCheck) {
     return esperanto;
   } else if (languageCheck === "german") {
     return german;
+  } else if (languageCheck === "italian") {
+    return italian;
+  } else if (languageCheck === "dutch") {
+    return dutch;
+  } else if (languageCheck === 'spanish') {
+    return spanish;
+  } else {
+    return randomLanguage();
+  }
+}
+
+function randomLanguage() {
+  var randomNum = Math.random();
+  if (randomNum < 0.20) {
+    return esperanto;
+  } else if (randomNum < 0.39) {
+    return german;
+  } else if (randomNum < 0.59) {
+    return italian;
+  } else if (randomNum < 0.79) {
+    return dutch;
   } else {
     return spanish;
   }
