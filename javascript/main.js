@@ -24,9 +24,17 @@ function addButtonEvtListener() {
 
 function gatherUserInput() {
   var input = document.getElementById("translate-me").value;  //collects input from textarea element
+  checkTextAreaLength(input);
   input = input.replace(/[^A-Za-z\s]/g, "").toLowerCase();  // keeps only letters and spaces
   var inputArr = input.split(" ");  //splits and stores in an array
   return inputArr;
+}
+
+function checkTextAreaLength (lengthCheck) {
+  if (lengthCheck.length < 1) {
+    //writeToDom(output,"output-div");
+    writeToDom("<h1>lengthCheck</h1>","output-div");
+  }
 }
 
 function checkLanguage(languageCheck) {
