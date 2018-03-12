@@ -40,18 +40,13 @@ function checkTextAreaLength (lengthCheck) {
 }
 
 function checkLanguage(languageCheck) {
-  if (languageCheck === "esperanto") {
-    return esperanto;
-  } else if (languageCheck === "german") {
-    return german;
-  } else if (languageCheck === "italian") {
-    return italian;
-  } else if (languageCheck === "dutch") {
-    return dutch;
-  } else if (languageCheck === 'spanish') {
-    return spanish;
-  } else {
-    return randomLanguage();
+  switch (languageCheck) {
+    case 'esperanto': return esperanto;
+    case 'german': return german;
+    case 'italian': return italian;
+    case 'dutch': return dutch;
+    case 'spanish': return spanish;
+    default: return randomLanguage();
   }
 }
 
