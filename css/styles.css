@@ -1,3 +1,7 @@
+* {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
 body {
   background-color: lightslategray;
   margin: 0;
@@ -7,6 +11,8 @@ body {
 h1 {
   text-align: center;
   padding: 15px 15px;
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 48px;
 }
 
 h3 {
@@ -53,7 +59,9 @@ button:hover {
 }
 
 #output-div {
-  font-size: 26px;
+  font-size: 100px;
+  font-family: 'Parisienne', cursive;
+  text-align: center;
 }
 
 #wrapper {
